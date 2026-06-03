@@ -2,11 +2,13 @@ const express = require("express");
 const router = express.Router();
 const User = require("../models/User");
 const sendOTP = require("../config/mailer");
-
+const mongoose = require("mongoose");
 
 
 console.log("user.js routes loaded");
 router.post("/signup", async (req, res) => {
+  console.log("Mongo ready state:", mongoose.connection.readyState);
+
   console.log("BODY:", req.body);
 
   try {
