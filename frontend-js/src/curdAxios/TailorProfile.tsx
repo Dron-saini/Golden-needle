@@ -9,7 +9,7 @@ export default function TailorProfile() {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:2007/tailor/${id}`)
+      .get(`https://golden-needle-backend123.vercel.app/tailor/${id}`)
       .then((res) => {
         console.log("DATA:", res.data);
         setTailor(res.data);

@@ -47,7 +47,7 @@ export default function ProfileTailor() {
     if (!emailid) return;
 
     axios
-      .get(`http://localhost:2007/tailor/${emailid}`)
+      .get(`https://golden-needle-backend123.vercel.app/tailor/${emailid}`)
       .then((res) => {
         if (res.data) {
           setForm({
@@ -95,7 +95,7 @@ export default function ProfileTailor() {
       if (aadharImage) formData.append("aadharImage", aadharImage);
 
       const res = await axios.post(
-        "http://localhost:2007/tailor/save",
+        "https://golden-needle-backend123.vercel.app/tailor/save",
         formData,
       );
 
@@ -156,7 +156,7 @@ export default function ProfileTailor() {
                 fd.append("aadharImage", file);
 
                 const res = await axios.post(
-                  "http://localhost:2007/tailor/ocr-aadhar",
+                  "https://golden-needle-backend123.vercel.app/tailor/ocr-aadhar",
                   fd,
                 );
 

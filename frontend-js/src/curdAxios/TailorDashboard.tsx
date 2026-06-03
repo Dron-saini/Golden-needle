@@ -18,7 +18,7 @@ export default function TailorDashboard() {
 
     // ✅ STEP 2: Safe API call
     axios
-      .get(`http://localhost:2007/tailor/profile/${email}`)
+      .get(`https://golden-needle-backend123.vercel.app/tailor/profile/${email}`)
       .then((res) => {
   console.log("API RESPONSE:", res.data);
 

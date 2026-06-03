@@ -43,7 +43,7 @@ export default function CustomerProfile() {
   async function doSearch() {
     try {
       const resp = await axios.post(
-        "http://localhost:2007/custprofile/find",
+        "https://golden-needle-backend123.vercel.app/custprofile/find",
         { emailid: form.emailid }
       );
 
@@ -100,7 +100,7 @@ async function doSave() {
     Object.entries(form).forEach(([k, v]) => v && fd.append(k, v as any));
 
     await axios.post(
-      "http://localhost:2007/custprofile/update",
+      "https://golden-needle-backend123.vercel.app/custprofile/update",
       fd,
       { headers: { "Content-Type": "multipart/form-data" } }
     );

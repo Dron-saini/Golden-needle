@@ -65,7 +65,7 @@ export default function Signup() {
     if (!validate()) return;
 
     try {
-      const url = "http://localhost:2007/user/signup";
+      const url = "https://golden-needle-backend123.vercel.app/user/signup";
       await axios.post(url, form, {
         headers: { "Content-Type": "application/json" },
       });

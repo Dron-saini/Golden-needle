@@ -28,7 +28,7 @@ export default function FindTailor() {
   // ✅ Fetch Cities
   useEffect(() => {
     axios
-      .get<{ cities: string[] }>("http://localhost:2007/tailor/tailor-filters")
+      .get<{ cities: string[] }>("https://golden-needle-backend123.vercel.app/tailor/tailor-filters")
       .then((res) => {
         const uniqueCities = [...new Set(res.data.cities || [])];
         setCities(uniqueCities);
@@ -56,7 +56,7 @@ export default function FindTailor() {
       if (category.length) params.category = category;
       if (speciality.length) params.speciality = speciality;
 
-      const res = await axios.get("http://localhost:2007/tailor/find-tailors", {
+      const res = await axios.get("https://golden-needle-backend123.vercel.app/tailor/find-tailors", {
         params,
         paramsSerializer: (params) => {
           return Object.keys(params)
